@@ -5,7 +5,6 @@ import com.study.daniel.santanderdevweek2023.domain.model.User;
 import java.util.List;
 
 import static java.util.Collections.emptyList;
-import static java.util.Optional.empty;
 import static java.util.Optional.ofNullable;
 import static java.util.stream.Collectors.toList;
 
@@ -38,4 +37,5 @@ public record UserDto(
         model.setNews(ofNullable(this.news).orElse(emptyList()).stream().map(NewsDto::toModel).collect(toList()));
         return model;
     }
+
 }
